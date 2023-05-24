@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hi, This is Alen's first react app, deployed to netlify!
+          Hi, this is alen's first react App
         </p>
       </header>
     </div>
