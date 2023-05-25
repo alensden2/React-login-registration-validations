@@ -42,6 +42,10 @@
 2) Took reference for the instructions to deploy to netlify from CSCI5709>Table of Contents>Week 2>T1: Web Development Frameworks>T1V1: Web Development Frameworks
 (https://dal.brightspace.com/d2l/le/content/274269/viewContent/3608562/View)
 
+## Sources Used
+
+No sources was used for this project, as this was a simple hello world app.
+
 ## Acknowledgments
 * Prof. Mosquera and all the TAs.
 * Netlify
