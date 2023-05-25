@@ -12,7 +12,9 @@
 
 * *Personal Branch in group 11 GitLab URL (alen-john)*: https://git.cs.dal.ca/dhruvilp/csci-5709-grp-11/-/tree/alen-john
 
-* *Tutorial 2 Private Git URL*: https://git.cs.dal.ca/alen/csci-5709-individual-b00930528-alen-john
+* *Tutorials & Assignments Private GitLab URL (Entire Repository)*: https://git.cs.dal.ca/alen/csci-5709-individual-b00930528-alen-john
+
+* *Tutorial 2 link to directory from individual repo (csci-5709-individual-b00930528-alen-john/tutorial/tutorial1):* https://git.cs.dal.ca/alen/csci-5709-individual-b00930528-alen-john/-/tree/main/tutorial/tutorial1
 
 ## Authors
 
