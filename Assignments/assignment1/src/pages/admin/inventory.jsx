@@ -7,9 +7,17 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
-
+import InfoIcon from "@mui/icons-material/Info";
+import QueryStatsIcon from "@mui/icons-material/QueryStats";
 const InventoryPage = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const onInfoClick = () => {
+    alert("Info Displayed as a pop-up card");
+  };
+
+  const onQueryStatsClick = () => {
+    alert("Query Stats Displayed as a pop-up card");
+  };
 
   const handleNavbarToggle = () => {
     setIsNavbarOpen(!isNavbarOpen);
@@ -179,16 +187,16 @@ const InventoryPage = () => {
                   {product.price}
                 </Typography>
               </CardContent>
-              <CardActions sx={{ justifyContent: "center" }}>
-                <Button
-                  variant="contained"
-                  size="small"
-                  sx={{ marginRight: 1 }}
-                >
-                  Add to Cart
+              <CardActions sx={{ justifyContent: "space-between" }}>
+                <Button variant="text" startIcon={<InfoIcon />}onClick={onInfoClick}>
+                  Info
                 </Button>
-                <Button size="small" color="secondary">
-                  Wishlist
+                <Button
+                  variant="text"
+                  startIcon={<QueryStatsIcon />}
+                  onClick={onQueryStatsClick}
+                >
+                  Query Stats
                 </Button>
               </CardActions>
             </Card>
