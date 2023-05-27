@@ -87,6 +87,7 @@ const Navbar = ({ isOpen, onToggle }) => {
           >
             VogueManic
           </Typography>
+          
         </Toolbar>
       </AppBarStyled>
       <Drawer
