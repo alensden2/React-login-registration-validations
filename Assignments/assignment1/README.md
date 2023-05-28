@@ -9,7 +9,7 @@ This react app shows the semi functional inventory page of the admin module of o
 
 
 * *Deployed Netlify Application URL*: https://alen-john-assignment-web.netlify.app/
-* *Assignment 1 code URL*: https://git.cs.dal.ca/alen/csci-5709-individual-b00930528-alen-john
+* *Assignment 1 code URL*: https://git.cs.dal.ca/alen/csci-5709-individual-b00930528-alen-john/-/tree/main/Assignments/assignment1
 
 * *Tutorials & Assignments Private GitLab URL (Entire Repository)*: https://git.cs.dal.ca/alen/csci-5709-individual-b00930528-alen-john
 
