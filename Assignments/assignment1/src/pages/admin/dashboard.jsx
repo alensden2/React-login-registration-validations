@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/navbar";
 
 const Dashboard = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-  
+
   const handleNavbarToggle = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };

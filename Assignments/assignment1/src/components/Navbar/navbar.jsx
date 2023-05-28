@@ -1,26 +1,41 @@
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import BadgeIcon from '@mui/icons-material/Badge';
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import BadgeIcon from "@mui/icons-material/Badge";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import HomeIcon from '@mui/icons-material/Home';
-import Inventory2Icon from '@mui/icons-material/Inventory2';
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import HomeIcon from "@mui/icons-material/Home";
+import Inventory2Icon from "@mui/icons-material/Inventory2";
 import MenuIcon from "@mui/icons-material/Menu";
-import ShowChartIcon from '@mui/icons-material/ShowChart';
+import ShowChartIcon from "@mui/icons-material/ShowChart";
 import { AppBar, Box, Drawer, Toolbar, Typography } from "@mui/material";
-import Divider from '@mui/material/Divider';
+import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
 import { styled, useTheme } from "@mui/material/styles";
 import React from "react";
+import { useNavigate } from "react-router";
 
 const drawerWidth = 240;
-
-const icons = [<DashboardIcon/>, <ShowChartIcon/>, <Inventory2Icon/>, <AttachMoneyIcon/>, <HomeIcon/>, <BadgeIcon/>]
+const icons = [
+  <DashboardIcon />,
+  <ShowChartIcon />,
+  <Inventory2Icon />,
+  <AttachMoneyIcon />,
+  <HomeIcon />,
+  <BadgeIcon />,
+];
+const routes = [
+  "/dashboard",
+  "/statistics",
+  "/inventory",
+  "/sales",
+  "/home",
+  "/employees",
+];
 
 const AppBarStyled = styled(AppBar, {
   shouldForwardProp: (prop) => prop !== "open",
@@ -49,7 +64,10 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const Navbar = ({ isOpen, onToggle }) => {
   const theme = useTheme();
-
+  const navigate = useNavigate();
+  const handleRoutes = (route) => {
+    navigate(route);
+  };
   const handleDrawerClose = () => {
     onToggle();
   };
@@ -87,7 +105,6 @@ const Navbar = ({ isOpen, onToggle }) => {
           >
             VogueManic
           </Typography>
-          
         </Toolbar>
       </AppBarStyled>
       <Drawer
@@ -123,12 +140,21 @@ const Navbar = ({ isOpen, onToggle }) => {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Dashboard', 'Statistics', 'Inventory', 'Sales', 'Home', 'Employees'].map((text, index) => (
+          {[
+            "Dashboard",
+            "Statistics",
+            "Inventory",
+            "Sales",
+            "Home",
+            "Employees",
+          ].map((text, index) => (
             <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {icons[index]}
-                </ListItemIcon>
+              <ListItemButton
+                onClick={() => {
+                  handleRoutes(routes[index]);
+                }}
+              >
+                <ListItemIcon>{icons[index]}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>
             </ListItem>
@@ -141,9 +167,6 @@ const Navbar = ({ isOpen, onToggle }) => {
 
 export default Navbar;
 
-
 // referene navbar - https://mui.com/material-ui/react-app-bar/
 // reference side bar - https://mui.com/material-ui/react-drawer/
 // font reference -<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-// photos https://www.vecteezy.com/photo/1741602-folded-garments-on-white-background
-// photos https://stock.adobe.com/ca/search?filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent_type%3Aillustration%5D=1&filters%5Bcontent_type%3Azip_vector%5D=1&filters%5Bcontent_type%3Avideo%5D=1&filters%5Bcontent_type%3Atemplate%5D=1&filters%5Bcontent_type%3A3d%5D=1&filters%5Bcontent_type%3Aimage%5D=1&order=relevance&safe_search=1&limit=100&search_page=1&search_type=usertyped&acp=&aco=men+shoes&k=men+shoes&get_facets=0

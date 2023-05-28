@@ -1,21 +1,21 @@
-import { useState } from "react";
-import Navbar from "../../components/Navbar/navbar";
+import InfoIcon from "@mui/icons-material/Info";
+import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import {
   Box,
-  Typography,
+  Container,
   List,
   ListItem,
   ListItemText,
-  Container,
+  Typography,
 } from "@mui/material";
-import * as React from "react";
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import InfoIcon from "@mui/icons-material/Info";
-import QueryStatsIcon from "@mui/icons-material/QueryStats";
+import * as React from "react";
+import { useState } from "react";
+import Navbar from "../../components/Navbar/navbar";
 const InventoryPage = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const onInfoClick = () => {
@@ -172,95 +172,108 @@ const InventoryPage = () => {
           >
             {products.map((product) => (
               <Card
-              key={product.id}
-              sx={{
-                maxWidth: 300,
-                marginBottom: 3,
-                height: "100%",
-                padding: "10px",
-                display: "flex",
-                flexDirection: "column",
-                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-                borderRadius: "8px",
-                transition: "transform 0.2s",
-                "&:hover": {
-                  transform: "scale(1.02)",
-                },
-              }}
-            >
-              <CardMedia
-                sx={{ height: 200, width: 300, borderRadius: "8px" }}
-                image={product.image}
-                title={product.name}
-              ></CardMedia>
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" component="div" sx={{ fontWeight: "bold", marginBottom: "8px" }}>
-                  {product.name}
-                </Typography>
-                <List sx={{ paddingTop: 2 }}>
-                  <ListItem sx={{ paddingTop: 0, paddingBottom: 1 }}>
-                    <ListItemText primary={`Reference: ${product.ref}`} />
-                  </ListItem>
-                  <ListItem sx={{ paddingTop: 0, paddingBottom: 1 }}>
-                    <ListItemText primary={`SKU: ${product.sku}`} />
-                  </ListItem>
-                  <ListItem sx={{ paddingTop: 0, paddingBottom: 1 }}>
-                    <ListItemText primary={`Units: ${product.remainingItems}`} />
-                  </ListItem>
-                  <ListItem sx={{ paddingTop: 0, paddingBottom: 1 }}>
-                    <ListItemText primary={`Total Remaining items: ${product.remainingItems}`} />
-                  </ListItem>
-                  <ListItem sx={{ paddingTop: 0, paddingBottom: 1 }}>
-                    <ListItemText
-                      primary={`Sizes Available: ${product.sizesAvailable.join(", ")}`}
-                    />
-                  </ListItem>
-                </List>
-                <Typography variant="subtitle1" component="div" sx={{ marginTop: 2 }}>
-                  <Box
-                    sx={{
-                      display: "inline-block",
-                      backgroundColor: "#f9f9f9",
-                      padding: "4px 8px",
-                      borderRadius: "4px",
-                      fontWeight: "bold",
-                      fontSize: "1.2rem",
-                      color: "#333",
-                      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-                    }}
-                  >
-                    {product.price}
-                  </Box>
-                </Typography>
-              </CardContent>
-            
-              <CardActions
+                key={product.id}
                 sx={{
+                  maxWidth: 300,
+                  marginBottom: 3,
+                  height: "100%",
+                  padding: "10px",
                   display: "flex",
-                  justifyContent: "space-between",
-                  borderTop: "1px solid rgba(0, 0, 0, 0.1)",
-                  paddingTop: 1,
+                  flexDirection: "column",
+                  boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                  borderRadius: "8px",
+                  transition: "transform 0.2s",
+                  "&:hover": {
+                    transform: "scale(1.02)",
+                  },
                 }}
               >
-                <Button
-                  variant="text"
-                  startIcon={<InfoIcon />}
-                  onClick={onInfoClick}
-                  sx={{ color: "#2196f3" }}
+                <CardMedia
+                  sx={{ height: 200, width: 300, borderRadius: "8px" }}
+                  image={product.image}
+                  title={product.name}
+                ></CardMedia>
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography
+                    variant="h6"
+                    component="div"
+                    sx={{ fontWeight: "bold", marginBottom: "8px" }}
+                  >
+                    {product.name}
+                  </Typography>
+                  <List sx={{ paddingTop: 2 }}>
+                    <ListItem sx={{ paddingTop: 0, paddingBottom: 1 }}>
+                      <ListItemText primary={`Reference: ${product.ref}`} />
+                    </ListItem>
+                    <ListItem sx={{ paddingTop: 0, paddingBottom: 1 }}>
+                      <ListItemText primary={`SKU: ${product.sku}`} />
+                    </ListItem>
+                    <ListItem sx={{ paddingTop: 0, paddingBottom: 1 }}>
+                      <ListItemText
+                        primary={`Units: ${product.remainingItems}`}
+                      />
+                    </ListItem>
+                    <ListItem sx={{ paddingTop: 0, paddingBottom: 1 }}>
+                      <ListItemText
+                        primary={`Total Remaining items: ${product.remainingItems}`}
+                      />
+                    </ListItem>
+                    <ListItem sx={{ paddingTop: 0, paddingBottom: 1 }}>
+                      <ListItemText
+                        primary={`Sizes Available: ${product.sizesAvailable.join(
+                          ", "
+                        )}`}
+                      />
+                    </ListItem>
+                  </List>
+                  <Typography
+                    variant="subtitle1"
+                    component="div"
+                    sx={{ marginTop: 2 }}
+                  >
+                    <Box
+                      sx={{
+                        display: "inline-block",
+                        backgroundColor: "#f9f9f9",
+                        padding: "4px 8px",
+                        borderRadius: "4px",
+                        fontWeight: "bold",
+                        fontSize: "1.2rem",
+                        color: "#333",
+                        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                      }}
+                    >
+                      {product.price}
+                    </Box>
+                  </Typography>
+                </CardContent>
+
+                <CardActions
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    borderTop: "1px solid rgba(0, 0, 0, 0.1)",
+                    paddingTop: 1,
+                  }}
                 >
-                  Info
-                </Button>
-                <Button
-                  variant="text"
-                  startIcon={<QueryStatsIcon />}
-                  onClick={onQueryStatsClick}
-                  sx={{ color: "#f44336" }}
-                >
-                  Query Stats
-                </Button>
-              </CardActions>
-            </Card>
-            
+                  <Button
+                    variant="text"
+                    startIcon={<InfoIcon />}
+                    onClick={onInfoClick}
+                    sx={{ color: "#2196f3" }}
+                  >
+                    Info
+                  </Button>
+                  <Button
+                    variant="text"
+                    startIcon={<QueryStatsIcon />}
+                    onClick={onQueryStatsClick}
+                    sx={{ color: "#f44336" }}
+                  >
+                    Query Stats
+                  </Button>
+                </CardActions>
+              </Card>
             ))}
           </Box>
         </Box>
