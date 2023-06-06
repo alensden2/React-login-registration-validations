@@ -1,6 +1,8 @@
 import Form from "./components/Form";
 import Navbar from "./components/navbar";
 import Box from '@mui/material/Box';
+import { Typography } from "@mui/material";
+
 
 function Register() {
     return <>
@@ -12,7 +14,12 @@ function Register() {
                 alignItems="center"
                 minHeight="calc(100vh - 64px)"
             >
-                <Form isLogin={false} />
+                <Box sx={{ gap: '20px', textAlign: 'center' }}>
+                    <Form isLogin={false} />
+                    <Typography variant="body2" component="p" sx={{ marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
+                        Already Signed up? Sign in <a href="/">here</a>!
+                    </Typography>
+                </Box>
             </Box>
         </div>
 
