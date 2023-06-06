@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
-function Form() {
+function Form({ isLogin }) {
     return (
         <Box sx={{
             width: '300px',
@@ -14,12 +14,14 @@ function Form() {
             textAlign: 'center',
             fontWeight: 'bold'
         }}>
-            <h3 style={{ marginBottom: '5px' }}>Registration Form</h3>
+            <h3 style={{ marginBottom: '5px' }}>{isLogin ? 'Login Form' : 'Registration Form'}</h3>
             <form>
-                <Box sx={{ display: 'flex', gap: '10px', marginBottom: '2px' }}>
-                    <TextField label="First Name" variant="outlined" fullWidth margin="normal" />
-                    <TextField label="Last Name" variant="outlined" fullWidth margin="normal" />
+                {!isLogin && (
+                    <Box sx={{ display: 'flex', gap: '10px', marginBottom: '2px' }}>
+                        <TextField label="First Name" variant="outlined" fullWidth margin="normal" />
+                        <TextField label="Last Name" variant="outlined" fullWidth margin="normal" />
                     </Box>
+                )}
 
                 <TextField label="Email" variant="outlined" fullWidth margin="normal" />
                 <TextField
@@ -29,16 +31,18 @@ function Form() {
                     margin="normal"
                     type="password"
                 />
-                <TextField
-                    label="Confirm Password"
-                    variant="outlined"
-                    fullWidth
-                    margin="normal"
-                    type="password"
-                    style={{ marginBottom: '20px' }}
-                />
+                {!isLogin && (
+                    <TextField
+                        label="Confirm Password"
+                        variant="outlined"
+                        fullWidth
+                        margin="normal"
+                        type="password"
+                        style={{ marginBottom: '20px' }}
+                    />
+                )}
                 <Button variant="contained" color="secondary" type="submit" sx={{ fontWeight: 'bold' }}>
-                    Register
+                    {isLogin ? 'Login' : 'Register'}
                 </Button>
             </form>
         </Box>
@@ -46,8 +50,3 @@ function Form() {
 }
 
 export default Form;
-
-
-/** reference -
- * https://mui.com/material-ui/react-text-field/
- */
