@@ -1,20 +1,16 @@
 import logo from './logo.svg';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import './App.css';
-import Login from './login';
-import Register from './registration';
 
 function App() {
   return (
-    <>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login/>}></Route>
-        <Route path='/registration' element={<Register />}></Route>
-      </Routes>
-    </BrowserRouter>
-    </>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Hi, this is alen's first react App
+        </p>
+      </header>
+    </div>
   );
 }
 
