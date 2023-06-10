@@ -1,4 +1,3 @@
-import AdbIcon from '@mui/icons-material/Adb';
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';

@@ -1,9 +1,15 @@
 import { Typography } from "@mui/material";
+import Box from '@mui/material/Box';
+import { useNavigate } from 'react-router-dom';
 import Form from "./components/Form";
 import Navbar from "./components/navbar";
-import Box from '@mui/material/Box';
 
 function Login() {
+    const navigate = useNavigate();
+    const handleSignUpClick = (event) => {
+        event.preventDefault();
+        navigate('/');
+    };
     return <>
         <div style={{ backgroundColor: '#d9d9d9', minHeight: '100vh' }}>
             <Navbar />
@@ -16,7 +22,7 @@ function Login() {
                 <Box sx={{ gap: '20px', textAlign: 'center' }}>
                     <Form isLogin={true} />
                     <Typography variant="body2" component="p" sx={{ marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
-                        New to the site? Sign up <a href="/registration">here</a>!
+                        New to the site? Sign up <a href="" onClick={handleSignUpClick}>here</a>!
                     </Typography>
                 </Box>
 
