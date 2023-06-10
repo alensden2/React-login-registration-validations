@@ -225,7 +225,11 @@ function Form({ isLogin }) {
 
 export default Form;
 
-/** reference for regex - https://regexr.com/ */
-/** refernce for form validation https://stackoverflow.com/questions/41296668/how-do-i-add-validation-to-the-form-in-my-react-component */
-/**https://www.robinwieruch.de/react-preventdefault/ */
-/**https://stackoverflow.com/questions/43085762/how-to-pass-form-values-as-formdata-in-reactjs-on-submit-function  */
+// Regular expression citation - used to create the regex used here for validation
+// Reference: https://regexr.com/
+// Form validation reference - to understand how validation is working
+// Reference: https://stackoverflow.com/questions/41296668/how-do-i-add-validation-to-the-form-in-my-react-component
+// Form validation code reference - to understand how validation is implemented
+// Reference: https://www.locofy.ai/blog/react-form-validation
+// Prevent auto-reload of form when submitted reference
+// Reference: https://www.robinwieruch.de/react-preventdefault/
