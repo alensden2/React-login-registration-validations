@@ -22,8 +22,8 @@ function Register() {
             >
                 <Box sx={{ gap: '20px', textAlign: 'center' }}>
                     <Form isLogin={false} />
-                    <Typography variant="body2" component="p" sx={{ marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
-                        Already Signed up? Sign in <a href="" onClick={handleSignInClick}>here</a>!
+                    <Typography variant="body2" component="p" onClick={handleSignInClick} sx={{ marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
+                        Already Signed up? Sign in here!
                     </Typography>
                 </Box>
             </Box>

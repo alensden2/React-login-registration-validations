@@ -21,8 +21,8 @@ function Login() {
             >
                 <Box sx={{ gap: '20px', textAlign: 'center' }}>
                     <Form isLogin={true} />
-                    <Typography variant="body2" component="p" sx={{ marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
-                        New to the site? Sign up <a href="" onClick={handleSignUpClick}>here</a>!
+                    <Typography variant="body2" onClick={handleSignUpClick} component="p" sx={{ marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
+                        New to the site? Sign up here!
                     </Typography>
                 </Box>
 

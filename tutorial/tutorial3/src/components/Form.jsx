@@ -100,7 +100,7 @@ function Form({ isLogin }) {
         else {
             setConfirmPasswordError('');
         }
-    })
+    }, [password, confirmPassword])
     useEffect(() => {
         setIsFormValid(
           firstName.trim() !== '' &&
