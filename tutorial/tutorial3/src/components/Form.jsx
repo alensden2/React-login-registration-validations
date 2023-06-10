@@ -103,15 +103,29 @@ function Form({ isLogin }) {
     })
     useEffect(() => {
         setIsFormValid(
+          firstName.trim() !== '' &&
+            lastName.trim() !== '' &&
+            email.trim() !== '' &&
+            password.trim() !== '' &&
+            confirmPassword.trim() !== '' &&
             !firstNameError &&
             !lastNameError &&
             !emailError &&
             !passwordError &&
             !confirmPasswordError
         );
-    }, [firstNameError, lastNameError, emailError, passwordError, confirmPasswordError]);
-
-
+      }, [
+        firstName,
+        lastName,
+        email,
+        password,
+        confirmPassword,
+        firstNameError,
+        lastNameError,
+        emailError,
+        passwordError,
+        confirmPasswordError,
+      ]);
     return (
         <Box sx={{
             width: '300px',
@@ -120,7 +134,9 @@ function Form({ isLogin }) {
             backgroundColor: 'white',
             borderRadius: '8px',
             textAlign: 'center',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.2)',
+
         }}>
             <h3 style={{ marginBottom: '5px', marginTop: '5px' }}>{isLogin ? 'Login Form' : 'Registration Form'}</h3>
             <form onSubmit={mainBtnEvent}>
